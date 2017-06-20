@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nameofbot
+  namespace: default
+  labels:
+    app: hubot
+spec:
+  containers:
+    - name: nameofbot
+      image: kavithag26/ubuntu4bot:v1
+      command: [ "/bin/bash", "-c", "--" ]
+      args: [ "sleep infinity" ]
+      ports:
+        - containerPort: 8787
+  restartPolicy: Never
